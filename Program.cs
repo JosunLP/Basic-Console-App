@@ -25,10 +25,7 @@ namespace Basis_.Net_Core_Konsolen_App
                         Console.WriteLine();
                         return;
                     case "help":
-                        Console.WriteLine("\nCommands: ");
-                        Console.WriteLine("         exit                    /beendet die ausführung des Programms");
-                        Console.WriteLine("         clear                   /leert die Console");
-                        Console.WriteLine("         help                    /öffnet die Command hilfe\n");
+                        DekoWorker.SetMenu("{'Commands': [{'Command': 'exit', 'Description': 'beendet die ausführung des Programms'},{'Command': 'clear', 'Description': 'leert die Console'},{'Command': 'help', 'Description': 'öffnet die Command hilfe'}]}");
                         DekoWorker.SetSpacer();
                         break;
                     case "clear":

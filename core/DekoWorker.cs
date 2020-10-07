@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
+using Basis_.Net_Core_Konsolen_App.models;
 
 namespace Basis_.Net_Core_Konsolen_App
 {
@@ -20,6 +22,20 @@ namespace Basis_.Net_Core_Konsolen_App
             "\\_| |_/ .__/| .__/  \\_| \\_/\\__,_|_| |_| |_|\\___|\n" +
             "      | |   | |                                 \n" +
             "      |_|   |_|                                 \n");
+        }
+
+        public static void SetMenu(string menuData)
+        {
+            var commandList = JsonConvert.DeserializeObject<Menu>(menuData);
+
+            SetSpacer();
+            Console.WriteLine("\nCommands: ");
+
+            foreach (var item in commandList.Commands)
+            {
+                Console.WriteLine("              " + item.Command + "          - " + item.Description);
+            }
+            SetSpacer();
         }
 
         public static void SetSpacer()
