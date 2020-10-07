@@ -17,7 +17,7 @@ namespace Basis_.Net_Core_Konsolen_App
             while (true)
             {
                 DekoWorker.SetCommand();
-                command = Console.ReadLine().ToLower();
+                command = DekoWorker.Input().ToLower();
                 command = command.Trim(chars);
                 switch (command)
                 {
@@ -25,7 +25,11 @@ namespace Basis_.Net_Core_Konsolen_App
                         Console.WriteLine();
                         return;
                     case "help":
-                        DekoWorker.SetMenu("{'Commands': [{'Command': 'exit', 'Description': 'beendet die ausführung des Programms'},{'Command': 'clear', 'Description': 'leert die Console'},{'Command': 'help', 'Description': 'öffnet die Command hilfe'}]}");
+                        DekoWorker.SetMenu("{'Commands': [" +
+                            "{'Command': 'exit', 'Description': 'beendet die ausführung des Programms'}," +
+                            "{'Command': 'clear', 'Description': 'leert die Console'}," +
+                            "{'Command': 'help', 'Description': 'öffnet die Command hilfe'}" +
+                            "]}");
                         DekoWorker.SetSpacer();
                         break;
                     case "clear":
