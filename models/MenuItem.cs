@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace Basis_.Net_Core_Konsolen_App.models;
 
-namespace Basis_.Net_Core_Konsolen_App.models
+class MenuItem
 {
-    class MenuItem
-    {
-        public string Command { get; set; }
+    public string Command { get; set; }
 
-        public string Description { get; set; }
-    }
+    public string Description { get; set; }
 }

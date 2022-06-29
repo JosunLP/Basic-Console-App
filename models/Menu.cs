@@ -1,12 +1,6 @@
-﻿using Microsoft.VisualBasic;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace Basis_.Net_Core_Konsolen_App.models;
 
-namespace Basis_.Net_Core_Konsolen_App.models
+class Menu
 {
-    class Menu
-    {
-        public List<MenuItem> Commands { get; set; }
-    }
+    public List<MenuItem> Commands { get; set; }
 }
