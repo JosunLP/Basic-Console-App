@@ -2,6 +2,7 @@
 /// An ASCII progress bar
 /// </summary>
 public class ProgressBar : IDisposable, IProgress<double> {
+
 	private const int blockCount = 10;
 	private readonly TimeSpan animationInterval = TimeSpan.FromSeconds(1.0 / 8);
 	private const string animation = @"|/-\";
@@ -13,6 +14,9 @@ public class ProgressBar : IDisposable, IProgress<double> {
 	private bool disposed = false;
 	private int animationIndex = 0;
 
+	/// <summary>
+	/// Sets a new Progress Bar for an instance of the <see cref="ProgressBar"/> class.
+	/// </summary>
 	public ProgressBar() {
 		timer = new Timer(TimerHandler);
 
@@ -30,6 +34,9 @@ public class ProgressBar : IDisposable, IProgress<double> {
 		Interlocked.Exchange(ref currentProgress, value);
 	}
 
+	/// <summary>
+	/// Handler for the timer.
+	/// </summary>
 	private void TimerHandler(object state) {
 		lock (timer) {
 			if (disposed) return;
@@ -72,10 +79,16 @@ public class ProgressBar : IDisposable, IProgress<double> {
 		currentText = text;
 	}
 
+	/// <summary>
+	/// Resets the timer to update the progress bar.
+	/// </summary>
 	private void ResetTimer() {
 		timer.Change(animationInterval, TimeSpan.FromMilliseconds(-1));
 	}
 
+	/// <summary>
+	/// Stops the progress bar.
+	/// </summary>
 	public void Dispose() {
 		lock (timer) {
 			disposed = true;
